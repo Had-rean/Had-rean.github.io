@@ -1,1 +1,52 @@
-Hello from my website
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Fang mich! 😂</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f8f8f8;
+        text-align: center;
+        margin-top: 50px;
+    }
+    #btn {
+        padding: 15px 25px;
+        font-size: 20px;
+        background: #ff6961;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        position: absolute;
+        transition: top 0.2s, left 0.2s;
+    }
+</style>
+</head>
+<body>
+
+<h1>Fang den Button! 😄</h1>
+<p>Versuch ihn anzuklicken… wenn du kannst!</p>
+
+<button id="btn">Klick mich!</button>
+
+<script>
+    const btn = document.getElementById("btn");
+
+    function randomPosition() {
+        const x = Math.random() * (window.innerWidth - 150);
+        const y = Math.random() * (window.innerHeight - 150);
+        btn.style.left = x + "px";
+        btn.style.top = y + "px";
+    }
+
+    btn.addEventListener("mouseover", randomPosition);
+
+    btn.addEventListener("click", () => {
+        alert("WOW! Du hast es geschafft! 🎉");
+    });
+
+    randomPosition();
+</script>
+
+</body>
+</html>
